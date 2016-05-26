@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "bundle": "NODE_ENV=production node_modules/webpack/bin/webpack.js -p --config webpack.config.js"
   },
   "keywords": [],
   "author": "CU7IOUS",

@@ -7,10 +7,10 @@ module.exports = {
   ],
 
   output: {
-    path: __dirname + '/webpack-bundle',
-    filename: 'webpack-bundle.js'
+    path: __dirname + '/src/assets/js',
+    filename: 'bundle.js'
   },
-  
+
   devServer: {
     inline: true,
     port: process.env.PORT
