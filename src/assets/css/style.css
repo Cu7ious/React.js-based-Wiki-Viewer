@@ -3,33 +3,38 @@ body {
     margin: 0;
     padding: 0;
     background-color: #2c3643;
+    height: 100%;
 }
 
 .wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.app-wrapper {
+    display: table-row;
+    height: 100%;
+}
+#app {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 40px;
 }
-
-.app {}
-
 .app-header {
     overflow: hidden;
     text-align: center;
     background-color: #ebebeb;
     box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.3) inset;
 }
-
 .app-header h1 {
     width: 275px;
     margin: 25px auto;
 }
-
 .app-header h1 i {
     font-family: serif;
     color: #A2A2A2;
 }
-
 .app-header h1 span {
     text-transform: uppercase;
     color: #575757;
@@ -38,39 +43,40 @@ body {
     text-indent: 10px;
     font-family: monospace;
 }
-
+.github-badge {
+    position: absolute;
+    top: 37px;
+    width: 50px;
+    right: 17px;
+}
 .app-searchBar {
     width: 275px;
     margin: 50px auto;
     position: relative;
 }
-
 .input-wrapper {
-    height: 20px;
-    width: 170px;
+    height: 40px;
+    width: 200px;
     border-radius: 50px 0 0 50px;
-    padding: 10px 30px 10px 10px;
     float: left;
     background-color: #fff;
     box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.3) inset;
 }
-
 .input-wrapper input {
     border: 0;
     width: 100%;
-    font: 24px serif;
-    margin-top: -5px;
-    padding-left: 5px;
-    background-color: transparent;
+    box-sizing: border-box;
+    padding: 6px 28px 0 13px;
+    font: 24px monospace;
+    color: #565656;
+    background-color: rgba(0, 0, 0, 0);
 }
-
 .app-searchBar button {
     cursor: pointer;
 }
-
 .app-searchBar .clear {
     position: absolute;
-    right: 70px;
+    right: 82px;
     top: 11px;
     background-color: transparent;
     border-radius: 50px;
@@ -81,50 +87,41 @@ body {
     font-family: sans-serif;
     color: #FF9632;
 }
-
 .app-searchBar .search {
     border: 0;
     background-color: #FF9632;
     color: #fff;
-    font-size: 11px;
+    font: 11px monospace;
     padding: 14px;
     line-height: 12px;
     border-radius: 0 50px 50px 0;
     box-shadow: 5px 4px 30px rgba(0, 0, 0, 0.1) inset;
 }
-
 .app-searchBar .search:active {
     box-shadow: 5px 4px 30px rgba(0, 0, 0, 0.3) inset;
 }
-
 .app-searchBar input:focus,
 .app-searchBar button:focus {
     outline-width: 0;
 }
-
 .random-link-wrapper {
     text-align: center;
-    font-family: sans-serif;
-    font-size: 12px;
+    font: 11px monospace;
 }
-
 .random-link-wrapper a {
     color: #fff;
     text-decoration: none;
     opacity: 0.6;
     transition: opacity .5s linear;
 }
-
 .random-link-wrapper a:hover {
     opacity: 1;
 }
-
 .app-articles-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
 .app-articles-list li {
   background-color: #ebebeb;
     box-shadow: 5px 4px 30px rgba(0, 0, 0, 0.1) inset;
@@ -134,44 +131,39 @@ body {
     border-left: 4px solid #ebebeb;
     transition: box-shadow .3s linear;
 }
-
 .app-articles-list li:hover {
     box-shadow: 5px 4px 30px rgba(0, 0, 0, 0.3) inset;
     border-right: 4px solid #FF9632;
     border-left: 4px solid #FF9632;
 }
-
 .app-articles-list a {
     text-decoration: none;
     color: #403737;
 }
-
 .app-articles-list h4 {
     font-size: 24px;
     margin: 10px 0;
 }
-
 .app-articles-list p {
     color: #575757;
 }
-
 .app-articles-list .searchmatch {
   background-color: rgba(255, 150, 50, 0.5);
 }
-
+.app-footer {
+    overflow: hidden;
+}
 .app-footer p {
     color: #A2A2A2;
     text-align: center;
     font-family: monospace;
 }
-
 .app-footer a {
     color: #fff;
     text-decoration: none;
     opacity: 0.8;
     transition: opacity .5s linear;
 }
-
 .app-footer a:hover {
     opacity: 1;
 }

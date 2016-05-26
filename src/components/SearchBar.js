@@ -9,34 +9,37 @@ class SearchBar extends React.Component {
       data: null,
       term: null
     }
+    this._makeQuery = this._makeQuery.bind(this)
+    this._onKeyPress = this._onKeyPress.bind(this)
+    this._updateState = this._updateState.bind(this)
+    this._clearSearchField = this._clearSearchField.bind(this)
   }
 
   _createClearButton() {
-    return this.state.query ? <button id="search" className="clear" onClick={this._clearSearchField.bind(this)}>&#x02A02;</button> : null;
+    return this.state.query ? <button className="clear" onClick={this._clearSearchField}>&#x02A02;</button> : null
   }
 
   _updateState(e) {
-    this.setState({query: e.target.value});
+    this.setState({query: e.target.value})
   }
 
   _buildLink(q) {
-    let url = 'https://en.wikipedia.org/wiki/';
-    let term = q.split(' ').join('_');
-
-    return url + term;
+    let url = 'https://en.wikipedia.org/wiki/'
+    let term = q.split(' ').join('_')
+    return url + term
   }
 
   _makeQuery() {
-    let query = this.state.query;
-    query ? this._askWikipedia(query) : false;
+    let query = this.state.query
+    query ? this._askWikipedia(query) : false
   }
 
   _clearSearchField() {
-    this.setState({query: ""});
+    this.setState({query: ""})
   }
 
   _askWikipedia(q) {
-    let $this = this;
+    let $this = this
 
     let url = 'https://en.wikipedia.org/w/' +
       'api.php?' +
@@ -53,14 +56,10 @@ class SearchBar extends React.Component {
       document.body.appendChild(dataSrc);
 
       window.parseResponse = function(data) {
-        // console.log(data);
-
         $this.setState({
           data: data.query.search,
           term: q
         });
-
-        // console.log($this.state.data);
       }
   }
 
@@ -76,12 +75,12 @@ class SearchBar extends React.Component {
             <input
               type="text"
               value={this.state.query}
-              onChange={this._updateState.bind(this)}
-              onKeyUp={this._onKeyPress.bind(this)}
+              onChange={this._updateState}
+              onKeyUp={this._onKeyPress}
             />
+            { this._createClearButton() }
           </div>
-          { this._createClearButton() }
-          <button className="search" id="search" onClick={this._makeQuery.bind(this)}>Search</button>
+          <button className="search" id="search" onClick={this._makeQuery}>Search</button>
 
           <p className="random-link-wrapper">
             <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Get random article</a>
